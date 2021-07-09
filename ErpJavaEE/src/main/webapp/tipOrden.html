@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Tipos de orden</title>
+    </head>
+    <body>
+        <select name="dllNames" id="dllNames">
+            <option value="OC" >Compra</option>
+            <option value="OV" >Venta</option>
+        </select>
+        <input type="button" value="select" onclick="SetName()"/>
+
+        <script type="text/javascript">
+            function SetName() {
+            if (window.opener !== null && !window.opener.closed) {
+
+                var tipOrden = window.opener.document.getElementById("tipOrden");
+                tipOrden.value = document.getElementById("dllNames").value;
+                
+            }
+            window.close();
+        }
+        </script>
+    </body>
+</html>
+
